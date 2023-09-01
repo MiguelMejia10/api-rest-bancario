@@ -22,7 +22,7 @@ public class ClientEntity extends PersonaEntity implements Serializable {
     private String password;
 
     @NotNull(message = "Estado debe ser ingresado y debe ser true o false")
-    private String status;
+    private String estado;
 
     @OneToMany(mappedBy = "cliente", fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private List<CuentaEntity> cuentas;

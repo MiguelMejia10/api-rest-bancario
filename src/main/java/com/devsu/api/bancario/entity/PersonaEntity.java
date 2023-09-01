@@ -33,7 +33,7 @@ public class PersonaEntity implements Serializable {
 
     @NotNull(message = "Edad debe ser ingresado")
     @Range(min=1, max=150,message = "Edad minima 1, edad maxima 150")
-    private byte edad;
+    private Integer edad;
 
     @NotEmpty(message = "Identificacion debe ser ingresado")
     @Column(unique = true)
