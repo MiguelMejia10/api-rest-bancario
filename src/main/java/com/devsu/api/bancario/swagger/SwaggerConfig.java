@@ -12,15 +12,14 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 
 @Configuration
-@EnableSwagger2
-//@EnableSwagger2WebMvc
+//@EnableSwagger2
 public class SwaggerConfig {
 
     @Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.create.user.controllers"))
+                .apis(RequestHandlerSelectors.basePackage("com.devsu.api.bancario.controller"))
                 .apis(RequestHandlerSelectors.any())
                 .paths(PathSelectors.any())
                 .build();
