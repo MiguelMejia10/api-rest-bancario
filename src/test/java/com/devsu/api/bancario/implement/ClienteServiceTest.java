@@ -17,6 +17,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -38,10 +39,15 @@ class ClienteServiceTest
 
 
 
+	@Test
+	void testFindAll_ClienteRepositoryReturnsNoItems()
+	{
+		when(mockClienteRepository.findAll()).thenReturn(Collections.emptyList());
 
+		final List<ClienteDTO> result = clienteServiceUnderTest.findAll();
 
-
-
+		assertThat(result).isEqualTo(Collections.emptyList());
+	}
 
 
 	@Test

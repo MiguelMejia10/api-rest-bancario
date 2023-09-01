@@ -1,0 +1,1358 @@
+{
+	"info": {
+		"_postman_id": "f0dcc56f-4a88-4e71-9a63-ddd4f120dadf",
+		"name": "OpenAPI definition Copy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10985733",
+		"_collection_link": "https://www.postman.com/jorgemiguelfv05/workspace/project/collection/10985733-f0dcc56f-4a88-4e71-9a63-ddd4f120dadf?action=share&source=collection_link&creator=10985733"
+	},
+	"item": [
+		{
+			"name": "movimientos",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "find By Id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/movimientos/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"movimientos",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<integer>"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/movimientos/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"movimientos",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"tipoMovimiento\": \"DEBITO\",\n  \"valor\": \"<double>\",\n  \"id\": \"<integer>\",\n  \"fecha\": \"<dateTime>\",\n  \"saldo\": \"<double>\",\n  \"cuenta\": {\n    \"estado\": \"<boolean>\",\n    \"numeroCuenta\": \"018049\",\n    \"saldoInicial\": \"<double>\",\n    \"tipoCuenta\": \"CORRIENTE\",\n    \"id\": \"<integer>\",\n    \"cliente\": {\n      \"direccion\": \"<string>\",\n      \"edad\": \"<string>\",\n      \"estado\": \"<boolean>\",\n      \"genero\": \"FEMENINO\",\n      \"identificacion\": \"3425300317177\",\n      \"nombre\": \"<string>\",\n      \"password\": \"<string>\",\n      \"telefono\": \"02334608130\",\n      \"clienteId\": \"<integer>\"\n    }\n  }\n}"
+								}
+							]
+						},
+						{
+							"name": "delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/movimientos/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"movimientos",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<integer>"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/movimientos/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"movimientos",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "find All",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/movimientos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"movimientos"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/movimientos",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"movimientos"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"tipoMovimiento\": \"DEBITO\",\n    \"valor\": \"<double>\",\n    \"id\": \"<integer>\",\n    \"fecha\": \"<dateTime>\",\n    \"saldo\": \"<double>\",\n    \"cuenta\": {\n      \"estado\": \"<boolean>\",\n      \"numeroCuenta\": \"011403\",\n      \"saldoInicial\": \"<double>\",\n      \"tipoCuenta\": \"CORRIENTE\",\n      \"id\": \"<integer>\",\n      \"cliente\": {\n        \"direccion\": \"<string>\",\n        \"edad\": \"<string>\",\n        \"estado\": \"<boolean>\",\n        \"genero\": \"NO_ESPECIFICA\",\n        \"identificacion\": \"85971415972\",\n        \"nombre\": \"<string>\",\n        \"password\": \"<string>\",\n        \"telefono\": \"60089254556\",\n        \"clienteId\": \"<integer>\"\n      }\n    }\n  },\n  {\n    \"tipoMovimiento\": \"DEBITO\",\n    \"valor\": \"<double>\",\n    \"id\": \"<integer>\",\n    \"fecha\": \"<dateTime>\",\n    \"saldo\": \"<double>\",\n    \"cuenta\": {\n      \"estado\": \"<boolean>\",\n      \"numeroCuenta\": \"1186274691\",\n      \"saldoInicial\": \"<double>\",\n      \"tipoCuenta\": \"CORRIENTE\",\n      \"id\": \"<integer>\",\n      \"cliente\": {\n        \"direccion\": \"<string>\",\n        \"edad\": \"<string>\",\n        \"estado\": \"<boolean>\",\n        \"genero\": \"NO_ESPECIFICA\",\n        \"identificacion\": \"0282161224863\",\n        \"nombre\": \"<string>\",\n        \"password\": \"<string>\",\n        \"telefono\": \"21791887905\",\n        \"clienteId\": \"<integer>\"\n      }\n    }\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"tipoMovimiento\": \"DEBITO\",\n  \"valor\": \"<double>\",\n  \"id\": \"<integer>\",\n  \"fecha\": \"<dateTime>\",\n  \"saldo\": \"<double>\",\n  \"cuenta\": {\n    \"estado\": \"<boolean>\",\n    \"numeroCuenta\": \"018049\",\n    \"saldoInicial\": \"<double>\",\n    \"tipoCuenta\": \"CORRIENTE\",\n    \"id\": \"<integer>\",\n    \"cliente\": {\n      \"direccion\": \"<string>\",\n      \"edad\": \"<string>\",\n      \"estado\": \"<boolean>\",\n      \"genero\": \"FEMENINO\",\n      \"identificacion\": \"3425300317177\",\n      \"nombre\": \"<string>\",\n      \"password\": \"<string>\",\n      \"telefono\": \"02334608130\",\n      \"clienteId\": \"<integer>\"\n    }\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/movimientos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"movimientos"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"tipoMovimiento\": \"DEBITO\",\n  \"valor\": \"<double>\",\n  \"id\": \"<integer>\",\n  \"fecha\": \"<dateTime>\",\n  \"saldo\": \"<double>\",\n  \"cuenta\": {\n    \"estado\": \"<boolean>\",\n    \"numeroCuenta\": \"018049\",\n    \"saldoInicial\": \"<double>\",\n    \"tipoCuenta\": \"CORRIENTE\",\n    \"id\": \"<integer>\",\n    \"cliente\": {\n      \"direccion\": \"<string>\",\n      \"edad\": \"<string>\",\n      \"estado\": \"<boolean>\",\n      \"genero\": \"FEMENINO\",\n      \"identificacion\": \"3425300317177\",\n      \"nombre\": \"<string>\",\n      \"password\": \"<string>\",\n      \"telefono\": \"02334608130\",\n      \"clienteId\": \"<integer>\"\n    }\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/movimientos",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"movimientos"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"tipoMovimiento\": \"DEBITO\",\n  \"valor\": \"<double>\",\n  \"id\": \"<integer>\",\n  \"fecha\": \"<dateTime>\",\n  \"saldo\": \"<double>\",\n  \"cuenta\": {\n    \"estado\": \"<boolean>\",\n    \"numeroCuenta\": \"018049\",\n    \"saldoInicial\": \"<double>\",\n    \"tipoCuenta\": \"CORRIENTE\",\n    \"id\": \"<integer>\",\n    \"cliente\": {\n      \"direccion\": \"<string>\",\n      \"edad\": \"<string>\",\n      \"estado\": \"<boolean>\",\n      \"genero\": \"FEMENINO\",\n      \"identificacion\": \"3425300317177\",\n      \"nombre\": \"<string>\",\n      \"password\": \"<string>\",\n      \"telefono\": \"02334608130\",\n      \"clienteId\": \"<integer>\"\n    }\n  }\n}"
+						}
+					]
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"tipoMovimiento\": \"DEBITO\",\n  \"valor\": \"<double>\",\n  \"id\": \"<integer>\",\n  \"fecha\": \"<dateTime>\",\n  \"saldo\": \"<double>\",\n  \"cuenta\": {\n    \"estado\": \"<boolean>\",\n    \"numeroCuenta\": \"018049\",\n    \"saldoInicial\": \"<double>\",\n    \"tipoCuenta\": \"CORRIENTE\",\n    \"id\": \"<integer>\",\n    \"cliente\": {\n      \"direccion\": \"<string>\",\n      \"edad\": \"<string>\",\n      \"estado\": \"<boolean>\",\n      \"genero\": \"FEMENINO\",\n      \"identificacion\": \"3425300317177\",\n      \"nombre\": \"<string>\",\n      \"password\": \"<string>\",\n      \"telefono\": \"02334608130\",\n      \"clienteId\": \"<integer>\"\n    }\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/movimientos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"movimientos"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"tipoMovimiento\": \"DEBITO\",\n  \"valor\": \"<double>\",\n  \"id\": \"<integer>\",\n  \"fecha\": \"<dateTime>\",\n  \"saldo\": \"<double>\",\n  \"cuenta\": {\n    \"estado\": \"<boolean>\",\n    \"numeroCuenta\": \"018049\",\n    \"saldoInicial\": \"<double>\",\n    \"tipoCuenta\": \"CORRIENTE\",\n    \"id\": \"<integer>\",\n    \"cliente\": {\n      \"direccion\": \"<string>\",\n      \"edad\": \"<string>\",\n      \"estado\": \"<boolean>\",\n      \"genero\": \"FEMENINO\",\n      \"identificacion\": \"3425300317177\",\n      \"nombre\": \"<string>\",\n      \"password\": \"<string>\",\n      \"telefono\": \"02334608130\",\n      \"clienteId\": \"<integer>\"\n    }\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/movimientos",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"movimientos"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"tipoMovimiento\": \"DEBITO\",\n  \"valor\": \"<double>\",\n  \"id\": \"<integer>\",\n  \"fecha\": \"<dateTime>\",\n  \"saldo\": \"<double>\",\n  \"cuenta\": {\n    \"estado\": \"<boolean>\",\n    \"numeroCuenta\": \"018049\",\n    \"saldoInicial\": \"<double>\",\n    \"tipoCuenta\": \"CORRIENTE\",\n    \"id\": \"<integer>\",\n    \"cliente\": {\n      \"direccion\": \"<string>\",\n      \"edad\": \"<string>\",\n      \"estado\": \"<boolean>\",\n      \"genero\": \"FEMENINO\",\n      \"identificacion\": \"3425300317177\",\n      \"nombre\": \"<string>\",\n      \"password\": \"<string>\",\n      \"telefono\": \"02334608130\",\n      \"clienteId\": \"<integer>\"\n    }\n  }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "cuentas",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "find By Id 1",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/cuentas/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"cuentas",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<integer>"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/cuentas/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"cuentas",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"estado\": \"<boolean>\",\n  \"numeroCuenta\": \"29190490\",\n  \"saldoInicial\": \"<double>\",\n  \"tipoCuenta\": \"AHORROS\",\n  \"id\": \"<integer>\",\n  \"cliente\": {\n    \"direccion\": \"<string>\",\n    \"edad\": \"<string>\",\n    \"estado\": \"<boolean>\",\n    \"genero\": \"FEMENINO\",\n    \"identificacion\": \"0606516839957\",\n    \"nombre\": \"<string>\",\n    \"password\": \"<string>\",\n    \"telefono\": \"794537482\",\n    \"clienteId\": \"<integer>\"\n  }\n}"
+								}
+							]
+						},
+						{
+							"name": "delete 1",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/cuentas/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"cuentas",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<integer>"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/cuentas/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"cuentas",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "update Patch",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"dolor_4\": {},\n  \"magna7ee\": {},\n  \"incididunt_cbd\": {},\n  \"elit10\": {}\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/cuentas/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"cuentas",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<integer>"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"dolor_4\": {},\n  \"magna7ee\": {},\n  \"incididunt_cbd\": {},\n  \"elit10\": {}\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/cuentas/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"cuentas",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"estado\": \"<boolean>\",\n  \"numeroCuenta\": \"29190490\",\n  \"saldoInicial\": \"<double>\",\n  \"tipoCuenta\": \"AHORROS\",\n  \"id\": \"<integer>\",\n  \"cliente\": {\n    \"direccion\": \"<string>\",\n    \"edad\": \"<string>\",\n    \"estado\": \"<boolean>\",\n    \"genero\": \"FEMENINO\",\n    \"identificacion\": \"0606516839957\",\n    \"nombre\": \"<string>\",\n    \"password\": \"<string>\",\n    \"telefono\": \"794537482\",\n    \"clienteId\": \"<integer>\"\n  }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "find All 1",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/cuentas",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cuentas"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/cuentas",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"cuentas"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"estado\": \"<boolean>\",\n    \"numeroCuenta\": \"58227814406\",\n    \"saldoInicial\": \"<double>\",\n    \"tipoCuenta\": \"CORRIENTE\",\n    \"id\": \"<integer>\",\n    \"cliente\": {\n      \"direccion\": \"<string>\",\n      \"edad\": \"<string>\",\n      \"estado\": \"<boolean>\",\n      \"genero\": \"MASCULINO\",\n      \"identificacion\": \"29539318244\",\n      \"nombre\": \"<string>\",\n      \"password\": \"<string>\",\n      \"telefono\": \"89649582326\",\n      \"clienteId\": \"<integer>\"\n    }\n  },\n  {\n    \"estado\": \"<boolean>\",\n    \"numeroCuenta\": \"60984891\",\n    \"saldoInicial\": \"<double>\",\n    \"tipoCuenta\": \"AHORROS\",\n    \"id\": \"<integer>\",\n    \"cliente\": {\n      \"direccion\": \"<string>\",\n      \"edad\": \"<string>\",\n      \"estado\": \"<boolean>\",\n      \"genero\": \"FEMENINO\",\n      \"identificacion\": \"61205030228\",\n      \"nombre\": \"<string>\",\n      \"password\": \"<string>\",\n      \"telefono\": \"7442089476561\",\n      \"clienteId\": \"<integer>\"\n    }\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "update 1",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"estado\": \"<boolean>\",\n  \"numeroCuenta\": \"29190490\",\n  \"saldoInicial\": \"<double>\",\n  \"tipoCuenta\": \"AHORROS\",\n  \"id\": \"<integer>\",\n  \"cliente\": {\n    \"direccion\": \"<string>\",\n    \"edad\": \"<string>\",\n    \"estado\": \"<boolean>\",\n    \"genero\": \"FEMENINO\",\n    \"identificacion\": \"0606516839957\",\n    \"nombre\": \"<string>\",\n    \"password\": \"<string>\",\n    \"telefono\": \"794537482\",\n    \"clienteId\": \"<integer>\"\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/cuentas",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cuentas"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"estado\": \"<boolean>\",\n  \"numeroCuenta\": \"29190490\",\n  \"saldoInicial\": \"<double>\",\n  \"tipoCuenta\": \"AHORROS\",\n  \"id\": \"<integer>\",\n  \"cliente\": {\n    \"direccion\": \"<string>\",\n    \"edad\": \"<string>\",\n    \"estado\": \"<boolean>\",\n    \"genero\": \"FEMENINO\",\n    \"identificacion\": \"0606516839957\",\n    \"nombre\": \"<string>\",\n    \"password\": \"<string>\",\n    \"telefono\": \"794537482\",\n    \"clienteId\": \"<integer>\"\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/cuentas",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"cuentas"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"estado\": \"<boolean>\",\n  \"numeroCuenta\": \"29190490\",\n  \"saldoInicial\": \"<double>\",\n  \"tipoCuenta\": \"AHORROS\",\n  \"id\": \"<integer>\",\n  \"cliente\": {\n    \"direccion\": \"<string>\",\n    \"edad\": \"<string>\",\n    \"estado\": \"<boolean>\",\n    \"genero\": \"FEMENINO\",\n    \"identificacion\": \"0606516839957\",\n    \"nombre\": \"<string>\",\n    \"password\": \"<string>\",\n    \"telefono\": \"794537482\",\n    \"clienteId\": \"<integer>\"\n  }\n}"
+						}
+					]
+				},
+				{
+					"name": "create 1",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"estado\": \"<boolean>\",\n  \"numeroCuenta\": \"29190490\",\n  \"saldoInicial\": \"<double>\",\n  \"tipoCuenta\": \"AHORROS\",\n  \"id\": \"<integer>\",\n  \"cliente\": {\n    \"direccion\": \"<string>\",\n    \"edad\": \"<string>\",\n    \"estado\": \"<boolean>\",\n    \"genero\": \"FEMENINO\",\n    \"identificacion\": \"0606516839957\",\n    \"nombre\": \"<string>\",\n    \"password\": \"<string>\",\n    \"telefono\": \"794537482\",\n    \"clienteId\": \"<integer>\"\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/cuentas",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cuentas"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"estado\": \"<boolean>\",\n  \"numeroCuenta\": \"29190490\",\n  \"saldoInicial\": \"<double>\",\n  \"tipoCuenta\": \"AHORROS\",\n  \"id\": \"<integer>\",\n  \"cliente\": {\n    \"direccion\": \"<string>\",\n    \"edad\": \"<string>\",\n    \"estado\": \"<boolean>\",\n    \"genero\": \"FEMENINO\",\n    \"identificacion\": \"0606516839957\",\n    \"nombre\": \"<string>\",\n    \"password\": \"<string>\",\n    \"telefono\": \"794537482\",\n    \"clienteId\": \"<integer>\"\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/cuentas",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"cuentas"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"estado\": \"<boolean>\",\n  \"numeroCuenta\": \"29190490\",\n  \"saldoInicial\": \"<double>\",\n  \"tipoCuenta\": \"AHORROS\",\n  \"id\": \"<integer>\",\n  \"cliente\": {\n    \"direccion\": \"<string>\",\n    \"edad\": \"<string>\",\n    \"estado\": \"<boolean>\",\n    \"genero\": \"FEMENINO\",\n    \"identificacion\": \"0606516839957\",\n    \"nombre\": \"<string>\",\n    \"password\": \"<string>\",\n    \"telefono\": \"794537482\",\n    \"clienteId\": \"<integer>\"\n  }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "client",
+			"item": [
+				{
+					"name": "{clienteId}",
+					"item": [
+						{
+							"name": "find By Cliente Id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/client/:clienteId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"client",
+										":clienteId"
+									],
+									"variable": [
+										{
+											"key": "clienteId"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/client/:clienteId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"client",
+												":clienteId"
+											],
+											"variable": [
+												{
+													"key": "clienteId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"direccion\": \"<string>\",\n  \"edad\": \"<string>\",\n  \"estado\": \"<boolean>\",\n  \"genero\": \"NO_ESPECIFICA\",\n  \"identificacion\": \"9356293208016\",\n  \"nombre\": \"<string>\",\n  \"password\": \"<string>\",\n  \"telefono\": \"774588628\",\n  \"clienteId\": \"<integer>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "delete 2",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/client/:clienteId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"client",
+										":clienteId"
+									],
+									"variable": [
+										{
+											"key": "clienteId",
+											"value": "<integer>"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/client/:clienteId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"client",
+												":clienteId"
+											],
+											"variable": [
+												{
+													"key": "clienteId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "update Patch 1",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"dolor_4\": {},\n  \"magna7ee\": {},\n  \"incididunt_cbd\": {},\n  \"elit10\": {}\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/client/:clienteId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"client",
+										":clienteId"
+									],
+									"variable": [
+										{
+											"key": "clienteId",
+											"value": "<integer>"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"dolor_4\": {},\n  \"magna7ee\": {},\n  \"incididunt_cbd\": {},\n  \"elit10\": {}\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/client/:clienteId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"client",
+												":clienteId"
+											],
+											"variable": [
+												{
+													"key": "clienteId"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"direccion\": \"<string>\",\n  \"edad\": \"<string>\",\n  \"estado\": \"<boolean>\",\n  \"genero\": \"NO_ESPECIFICA\",\n  \"identificacion\": \"9356293208016\",\n  \"nombre\": \"<string>\",\n  \"password\": \"<string>\",\n  \"telefono\": \"774588628\",\n  \"clienteId\": \"<integer>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "find All 2",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/client",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"client"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/client",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"client"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"direccion\": \"<string>\",\n    \"edad\": \"<string>\",\n    \"estado\": \"<boolean>\",\n    \"genero\": \"NO_ESPECIFICA\",\n    \"identificacion\": \"9676319328907\",\n    \"nombre\": \"<string>\",\n    \"password\": \"<string>\",\n    \"telefono\": \"064048059\",\n    \"clienteId\": \"<integer>\"\n  },\n  {\n    \"direccion\": \"<string>\",\n    \"edad\": \"<string>\",\n    \"estado\": \"<boolean>\",\n    \"genero\": \"FEMENINO\",\n    \"identificacion\": \"5930213429985\",\n    \"nombre\": \"<string>\",\n    \"password\": \"<string>\",\n    \"telefono\": \"27723598785\",\n    \"clienteId\": \"<integer>\"\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "update 2",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"direccion\": \"<string>\",\n  \"edad\": \"<string>\",\n  \"estado\": \"<boolean>\",\n  \"genero\": \"NO_ESPECIFICA\",\n  \"identificacion\": \"9356293208016\",\n  \"nombre\": \"<string>\",\n  \"password\": \"<string>\",\n  \"telefono\": \"774588628\",\n  \"clienteId\": \"<integer>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/client",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"client"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"direccion\": \"<string>\",\n  \"edad\": \"<string>\",\n  \"estado\": \"<boolean>\",\n  \"genero\": \"NO_ESPECIFICA\",\n  \"identificacion\": \"9356293208016\",\n  \"nombre\": \"<string>\",\n  \"password\": \"<string>\",\n  \"telefono\": \"774588628\",\n  \"clienteId\": \"<integer>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/client",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"client"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"direccion\": \"<string>\",\n  \"edad\": \"<string>\",\n  \"estado\": \"<boolean>\",\n  \"genero\": \"NO_ESPECIFICA\",\n  \"identificacion\": \"9356293208016\",\n  \"nombre\": \"<string>\",\n  \"password\": \"<string>\",\n  \"telefono\": \"774588628\",\n  \"clienteId\": \"<integer>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "create 2",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"direccion\": \"<string>\",\n  \"edad\": \"<string>\",\n  \"estado\": \"<boolean>\",\n  \"genero\": \"NO_ESPECIFICA\",\n  \"identificacion\": \"9356293208016\",\n  \"nombre\": \"<string>\",\n  \"password\": \"<string>\",\n  \"telefono\": \"774588628\",\n  \"clienteId\": \"<integer>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/client",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"client"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"direccion\": \"<string>\",\n  \"edad\": \"<string>\",\n  \"estado\": \"<boolean>\",\n  \"genero\": \"NO_ESPECIFICA\",\n  \"identificacion\": \"9356293208016\",\n  \"nombre\": \"<string>\",\n  \"password\": \"<string>\",\n  \"telefono\": \"774588628\",\n  \"clienteId\": \"<integer>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/client",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"client"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"direccion\": \"<string>\",\n  \"edad\": \"<string>\",\n  \"estado\": \"<boolean>\",\n  \"genero\": \"NO_ESPECIFICA\",\n  \"identificacion\": \"9356293208016\",\n  \"nombre\": \"<string>\",\n  \"password\": \"<string>\",\n  \"telefono\": \"774588628\",\n  \"clienteId\": \"<integer>\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "reportes",
+			"item": [
+				{
+					"name": "get Reporte",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/reportes?clienteId=<integer>&fechaInicio=<date>&fechaFinal=<date>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reportes"
+							],
+							"query": [
+								{
+									"key": "clienteId",
+									"value": "<integer>",
+									"description": "(Required) "
+								},
+								{
+									"key": "fechaInicio",
+									"value": "<date>",
+									"description": "(Required) "
+								},
+								{
+									"key": "fechaFinal",
+									"value": "<date>",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/reportes?clienteId=<integer>&fechaInicio=<date>&fechaFinal=<date>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"reportes"
+									],
+									"query": [
+										{
+											"key": "clienteId",
+											"value": "<integer>",
+											"description": "(Required) "
+										},
+										{
+											"key": "fechaInicio",
+											"value": "<date>",
+											"description": "(Required) "
+										},
+										{
+											"key": "fechaFinal",
+											"value": "<date>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"clienteId\": \"<integer>\",\n  \"nombre\": \"<string>\",\n  \"identificacion\": \"<string>\",\n  \"cuentas\": [\n    {\n      \"numeroCuenta\": \"<string>\",\n      \"tipoCuenta\": \"<string>\",\n      \"saldo\": \"<double>\",\n      \"totalDebitos\": \"<double>\",\n      \"totalCreditos\": \"<double>\",\n      \"movimientos\": [\n        {\n          \"tipoMovimiento\": \"DEBITO\",\n          \"fecha\": \"<dateTime>\",\n          \"valor\": \"<double>\",\n          \"saldo\": \"<double>\"\n        },\n        {\n          \"tipoMovimiento\": \"CREDITO\",\n          \"fecha\": \"<dateTime>\",\n          \"valor\": \"<double>\",\n          \"saldo\": \"<double>\"\n        }\n      ]\n    },\n    {\n      \"numeroCuenta\": \"<string>\",\n      \"tipoCuenta\": \"<string>\",\n      \"saldo\": \"<double>\",\n      \"totalDebitos\": \"<double>\",\n      \"totalCreditos\": \"<double>\",\n      \"movimientos\": [\n        {\n          \"tipoMovimiento\": \"CREDITO\",\n          \"fecha\": \"<dateTime>\",\n          \"valor\": \"<double>\",\n          \"saldo\": \"<double>\"\n        },\n        {\n          \"tipoMovimiento\": \"DEBITO\",\n          \"fecha\": \"<dateTime>\",\n          \"valor\": \"<double>\",\n          \"saldo\": \"<double>\"\n        }\n      ]\n    }\n  ],\n  \"saldoTotalGeneral\": \"<double>\",\n  \"creditoTotalGeneral\": \"<double>\",\n  \"debitoTotalGeneral\": \"<double>\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8085"
+		}
+	]
+}

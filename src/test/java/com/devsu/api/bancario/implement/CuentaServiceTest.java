@@ -45,6 +45,17 @@ class CuentaServiceTest
 		assertThatThrownBy(() -> cuentaServiceUnderTest.findById(0)).isInstanceOf(NotFoundException.class);
 	}
 
+
+	@Test
+	void testFindAll_CuentaRepositoryReturnsNoItems()
+	{
+		when(mockCuentaRepository.findAll()).thenReturn(Collections.emptyList());
+
+		final List<CuentaDTO> result = cuentaServiceUnderTest.findAll();
+
+		assertThat(result).isEqualTo(Collections.emptyList());
+	}
+
 	@Test
 	void testUpdate_CuentaRepositoryFindByIdReturnsAbsent()
 	{

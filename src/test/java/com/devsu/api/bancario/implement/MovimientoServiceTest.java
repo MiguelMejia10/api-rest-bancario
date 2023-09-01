@@ -16,6 +16,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.time.LocalDateTime;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -34,6 +35,17 @@ class MovimientoServiceTest
 
 	@InjectMocks
 	private MovimientoService movimientoServiceUnderTest;
+
+
+	@Test
+	void testFindAll_MovimientoRepositoryReturnsNoItems()
+	{
+		when(mockMovimientoRepository.findAll()).thenReturn(Collections.emptyList());
+
+		final List<MovimientoDTO> result = movimientoServiceUnderTest.findAll();
+
+		assertThat(result).isEqualTo(Collections.emptyList());
+	}
 
 
 	@Test

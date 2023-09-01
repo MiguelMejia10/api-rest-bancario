@@ -40,6 +40,7 @@ public class ClienteService implements IClienteService
 	@Autowired
 	private ClienteRepository clienteRepository;
 
+	@Override
 	public List<ClienteDTO> findAll(){
 		return clienteRepository.findAll().stream().map(ClienteMapper.INSTANCE::clienteToClienteDTO).collect(Collectors.toList());
 	}
