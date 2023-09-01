@@ -9,7 +9,7 @@ import com.devsu.api.bancario.dto.ClienteDTO;
 import com.devsu.api.bancario.entity.ClientEntity;
 import com.devsu.api.bancario.entity.MovimientoEntity;
 import com.devsu.api.bancario.enums.TypeGenero;
-import com.devsu.api.bancario.mapper.ClientMapper;
+import com.devsu.api.bancario.mapper.ClienteMapper;
 import com.devsu.api.bancario.repository.ClienteRepository;
 import com.devsu.api.bancario.service.IClienteService;
 import lombok.extern.slf4j.Slf4j;
@@ -40,11 +40,10 @@ public class ClienteService implements IClienteService
 	@Autowired
 	private ClienteRepository clienteRepository;
 
-	@Override
-	public List<ClienteDTO> findAll()
-	{
-		return clienteRepository.findAll().stream().map(ClientMapper.INSTANCE::clienteToClienteDTO).collect(Collectors.toList());
+	public List<ClienteDTO> findAll(){
+		return clienteRepository.findAll().stream().map(ClienteMapper.INSTANCE::clienteToClienteDTO).collect(Collectors.toList());
 	}
+
 
 	@Override
 	public ClienteDTO findByClientId(final Integer clientId)
@@ -52,7 +51,7 @@ public class ClienteService implements IClienteService
 		Optional<ClientEntity> cliente = clienteRepository.findByClientId(clientId);
 		if (cliente.isPresent())
 		{
-			return cliente.map(ClientMapper.INSTANCE::clienteToClienteDTO).get();
+			return cliente.map(ClienteMapper.INSTANCE::clienteToClienteDTO).get();
 		}
 		else
 		{
@@ -72,8 +71,8 @@ public class ClienteService implements IClienteService
 					String.format(ExceptionsConstants.CLIENTE_YA_EXISTE, clienteDTO.getIdentificacion()));
 		}
 		clienteDTO.setPassword(cifrarPassword(clienteDTO.getPassword()));
-		return ClientMapper.INSTANCE.clienteToClienteDTO(
-				clienteRepository.save(ClientMapper.INSTANCE.clienteDTOToCliente(clienteDTO)));
+		return ClienteMapper.INSTANCE.clienteToClienteDTO(
+				clienteRepository.save(ClienteMapper.INSTANCE.clienteDTOToCliente(clienteDTO)));
 	}
 
 	@Override
@@ -91,8 +90,8 @@ public class ClienteService implements IClienteService
 						clienteDTO.getIdentificacion()));
 			}
 			clienteDTO.setPassword(cifrarPassword(clienteDTO.getPassword()));
-			return ClientMapper.INSTANCE.clienteToClienteDTO(
-					clienteRepository.save(ClientMapper.INSTANCE.clienteDTOToCliente(clienteDTO)));
+			return ClienteMapper.INSTANCE.clienteToClienteDTO(
+					clienteRepository.save(ClienteMapper.INSTANCE.clienteDTOToCliente(clienteDTO)));
 		}
 		else
 		{
@@ -132,7 +131,7 @@ public class ClienteService implements IClienteService
 				field.setAccessible(true);
 				ReflectionUtils.setField(field, cliente.get(), q);
 			});
-			return ClientMapper.INSTANCE.clienteToClienteDTO(clienteRepository.save(cliente.get()));
+			return ClienteMapper.INSTANCE.clienteToClienteDTO(clienteRepository.save(cliente.get()));
 		}
 		else
 		{

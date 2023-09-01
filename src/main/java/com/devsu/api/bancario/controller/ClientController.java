@@ -4,6 +4,7 @@ import com.devsu.api.bancario.Exceptions.BadRequestException;
 import com.devsu.api.bancario.Exceptions.ExceptionsConstants;
 import com.devsu.api.bancario.dto.ClienteDTO;
 import com.devsu.api.bancario.service.IClienteService;
+import com.devsu.api.bancario.service.implement.ClienteService;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,7 @@ public class ClientController {
 
     @Autowired
     private IClienteService clienteService;
+
 
     @GetMapping
     public ResponseEntity<List<ClienteDTO>> findAll()

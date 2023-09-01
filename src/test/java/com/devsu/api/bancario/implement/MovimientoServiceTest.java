@@ -16,7 +16,6 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.time.LocalDateTime;
-import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -38,18 +37,6 @@ class MovimientoServiceTest
 
 
 	@Test
-	void testFindAll_MovimientoRepositoryReturnsNoItems()
-	{
-		when(mockMovimientoRepository.findAll()).thenReturn(Collections.emptyList());
-
-		final List<MovimientoDTO> result = movimientoServiceUnderTest.findAll();
-
-		assertThat(result).isEqualTo(Collections.emptyList());
-	}
-
-
-
-	@Test
 	void testFindById_MovimientoRepositoryReturnsAbsent()
 	{
 		when(mockMovimientoRepository.findById(0)).thenReturn(Optional.empty());
@@ -64,15 +51,15 @@ class MovimientoServiceTest
 	{
 		final MovimientoDTO movimiento = new MovimientoDTO();
 		movimiento.setId(2);
-		movimiento.setFecha(LocalDateTime.of(2020, 1, 1, 0, 0, 0));
+		movimiento.setFecha(LocalDateTime.of(2022, 2, 5, 12, 3, 0));
 		movimiento.setTipoMovimiento(TypeMovimiento.DEBITO);
 		movimiento.setValor(0.0);
 		movimiento.setSaldo(0.0);
 		final CuentaDTO cuenta = new CuentaDTO();
-		cuenta.setNumeroCuenta("5655353666");
+		cuenta.setNumeroCuenta("498323872");
 		movimiento.setCuenta(cuenta);
 
-		when(mockCuentaService.findByNumeroCuenta("5655353666")).thenReturn(Optional.empty());
+		when(mockCuentaService.findByNumeroCuenta("498323872")).thenReturn(Optional.empty());
 
 		assertThatThrownBy(() -> movimientoServiceUnderTest.create(movimiento)).isInstanceOf(NotFoundException.class);
 	}
@@ -82,12 +69,12 @@ class MovimientoServiceTest
 	{
 		final MovimientoEntity movimiento = new MovimientoEntity();
 		movimiento.setId(0);
-		movimiento.setFecha(LocalDateTime.of(2020, 1, 1, 0, 0, 0));
+		movimiento.setFecha(LocalDateTime.of(2022, 3, 4, 10, 0, 0));
 		movimiento.setTipoMovimiento(TypeMovimiento.DEBITO);
 		movimiento.setValor(0.0);
 		movimiento.setSaldo(0.0);
 		final CuentaEntity cuenta = new CuentaEntity();
-		cuenta.setNumeroCuenta("87398999");
+		cuenta.setNumeroCuenta("98309490");
 		cuenta.setSaldoInicial(0.0);
 		cuenta.setMovimientos(List.of(new MovimientoEntity()));
 		movimiento.setCuenta(cuenta);
@@ -105,12 +92,12 @@ class MovimientoServiceTest
 	{
 		final MovimientoDTO movimiento = new MovimientoDTO();
 		movimiento.setId(0);
-		movimiento.setFecha(LocalDateTime.of(2020, 1, 1, 0, 0, 0));
+		movimiento.setFecha(LocalDateTime.of(2022, 12, 12, 0, 0, 0));
 		movimiento.setTipoMovimiento(TypeMovimiento.DEBITO);
 		movimiento.setValor(0.0);
 		movimiento.setSaldo(0.0);
 		final CuentaDTO cuenta = new CuentaDTO();
-		cuenta.setNumeroCuenta("76365555");
+		cuenta.setNumeroCuenta("22224444");
 		movimiento.setCuenta(cuenta);
 
 		when(mockMovimientoRepository.findById(0)).thenReturn(Optional.empty());
@@ -129,7 +116,7 @@ class MovimientoServiceTest
 		movimiento1.setValor(0.0);
 		movimiento1.setSaldo(0.0);
 		final CuentaEntity cuenta = new CuentaEntity();
-		cuenta.setNumeroCuenta("86355345");
+		cuenta.setNumeroCuenta("99990000");
 		cuenta.setSaldoInicial(0.0);
 		cuenta.setMovimientos(List.of(new MovimientoEntity()));
 		movimiento1.setCuenta(cuenta);

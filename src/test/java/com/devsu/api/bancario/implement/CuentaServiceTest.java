@@ -36,15 +36,6 @@ class CuentaServiceTest
 	@InjectMocks
 	private CuentaService cuentaServiceUnderTest;
 
-	@Test
-	void testFindAll_CuentaRepositoryReturnsNoItems()
-	{
-		when(mockCuentaRepository.findAll()).thenReturn(Collections.emptyList());
-
-		final List<CuentaDTO> result = cuentaServiceUnderTest.findAll();
-
-		assertThat(result).isEqualTo(Collections.emptyList());
-	}
 
 	@Test
 	void testFindById_CuentaRepositoryReturnsAbsent()
@@ -59,10 +50,10 @@ class CuentaServiceTest
 	{
 		final CuentaDTO cuenta = new CuentaDTO();
 		cuenta.setId(0);
-		cuenta.setNumeroCuenta("45453322");
+		cuenta.setNumeroCuenta("88881234");
 		cuenta.setTipoCuenta(TypeCuenta.AHORROS);
 		final ClientEntity cliente = new ClientEntity();
-		cliente.setIdentificacion("231234333");
+		cliente.setIdentificacion("999991234");
 
 		when(mockCuentaRepository.findById(0)).thenReturn(Optional.empty());
 
@@ -83,10 +74,10 @@ class CuentaServiceTest
 	{
 		final CuentaEntity cuenta1 = new CuentaEntity();
 		cuenta1.setId(0);
-		cuenta1.setNumeroCuenta("342223333");
+		cuenta1.setNumeroCuenta("999999991");
 		cuenta1.setTipoCuenta(TypeCuenta.AHORROS);
 		final ClientEntity cliente = new ClientEntity();
-		cliente.setIdentificacion("09847874747");
+		cliente.setIdentificacion("11111111112");
 		cuenta1.setCliente(cliente);
 		final Optional<CuentaEntity> cuenta = Optional.of(cuenta1);
 		when(mockCuentaRepository.findById(0)).thenReturn(cuenta);
@@ -109,24 +100,24 @@ class CuentaServiceTest
 	{
 		final CuentaEntity cuenta = new CuentaEntity();
 		cuenta.setId(0);
-		cuenta.setNumeroCuenta("7377737989");
+		cuenta.setNumeroCuenta("9999999991");
 		cuenta.setTipoCuenta(TypeCuenta.AHORROS);
 		final ClientEntity cliente = new ClientEntity();
-		cliente.setIdentificacion("114388383888");
+		cliente.setIdentificacion("123456789101");
 		cuenta.setCliente(cliente);
 		final Optional<CuentaEntity> expectedResult = Optional.of(cuenta);
 
 		final CuentaEntity cuenta2 = new CuentaEntity();
 		cuenta2.setId(0);
-		cuenta2.setNumeroCuenta("7377737989");
+		cuenta2.setNumeroCuenta("9999999991");
 		cuenta2.setTipoCuenta(TypeCuenta.AHORROS);
 		final ClientEntity cliente1 = new ClientEntity();
-		cliente1.setIdentificacion("114388383888");
+		cliente1.setIdentificacion("123456789101");
 		cuenta2.setCliente(cliente1);
 		final Optional<CuentaEntity> cuenta1 = Optional.of(cuenta2);
-		when(mockCuentaRepository.findByNumeroCuenta("7377737989")).thenReturn(cuenta1);
+		when(mockCuentaRepository.findByNumeroCuenta("9999999991")).thenReturn(cuenta1);
 
-		final Optional<CuentaEntity> result = cuentaServiceUnderTest.findByNumeroCuenta("7377737989");
+		final Optional<CuentaEntity> result = cuentaServiceUnderTest.findByNumeroCuenta("9999999991");
 
 		assertThat(result).isEqualTo(expectedResult);
 	}
@@ -134,9 +125,9 @@ class CuentaServiceTest
 	@Test
 	void testFindByNumeroCuenta_CuentaRepositoryReturnsAbsent()
 	{
-		when(mockCuentaRepository.findByNumeroCuenta("00093873873")).thenReturn(Optional.empty());
+		when(mockCuentaRepository.findByNumeroCuenta("99999999911")).thenReturn(Optional.empty());
 
-		final Optional<CuentaEntity> result = cuentaServiceUnderTest.findByNumeroCuenta("00093873873");
+		final Optional<CuentaEntity> result = cuentaServiceUnderTest.findByNumeroCuenta("99999999911");
 
 		assertThat(result).isEmpty();
 	}

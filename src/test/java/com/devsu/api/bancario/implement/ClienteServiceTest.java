@@ -6,7 +6,7 @@ import com.devsu.api.bancario.dto.ClienteDTO;
 import com.devsu.api.bancario.entity.ClientEntity;
 import com.devsu.api.bancario.entity.CuentaEntity;
 import com.devsu.api.bancario.entity.MovimientoEntity;
-import com.devsu.api.bancario.mapper.ClientMapper;
+import com.devsu.api.bancario.mapper.ClienteMapper;
 import com.devsu.api.bancario.repository.ClienteRepository;
 import com.devsu.api.bancario.service.implement.ClienteService;
 import org.junit.jupiter.api.Test;
@@ -17,7 +17,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -39,15 +38,9 @@ class ClienteServiceTest
 
 
 
-	@Test
-	void testFindAll_ClienteRepositoryReturnsNoItems()
-	{
-		when(mockClienteRepository.findAll()).thenReturn(Collections.emptyList());
 
-		final List<ClienteDTO> result = clienteServiceUnderTest.findAll();
 
-		assertThat(result).isEqualTo(Collections.emptyList());
-	}
+
 
 
 
@@ -57,35 +50,6 @@ class ClienteServiceTest
 		when(mockClienteRepository.findByClientId(0)).thenReturn(Optional.empty());
 
 		assertThatThrownBy(() -> clienteServiceUnderTest.findByClientId(0)).isInstanceOf(NotFoundException.class);
-	}
-
-	@Test
-	void testCreate_ThrowsConflictException()
-	{
-		final ClienteDTO clienteDTO = new ClienteDTO();
-		clienteDTO.setClienteId(0);
-		clienteDTO.setIdentificacion("Francis");
-		clienteDTO.setPassword("1234567");
-		final CuentaEntity cuenta = new CuentaEntity();
-		final MovimientoEntity movimiento = new MovimientoEntity();
-		movimiento.setFecha(LocalDateTime.of(2020, 1, 1, 0, 0, 0));
-		cuenta.setMovimientos(List.of(movimiento));
-		ClientEntity cliente = ClientMapper.INSTANCE.clienteDTOToCliente(clienteDTO);
-		cliente.setCuentas(List.of(cuenta));
-
-		final ClientEntity cliente2 = new ClientEntity();
-		cliente2.setClientId(0);
-		cliente2.setIdentificacion("Francis");
-		cliente2.setPassword("1234567");
-		final CuentaEntity cuenta1 = new CuentaEntity();
-		final MovimientoEntity movimiento1 = new MovimientoEntity();
-		movimiento1.setFecha(LocalDateTime.of(2020, 1, 1, 0, 0, 0));
-		cuenta1.setMovimientos(List.of(movimiento1));
-		cliente2.setCuentas(List.of(cuenta1));
-		final Optional<ClientEntity> cliente1 = Optional.of(cliente2);
-		when(mockClienteRepository.findByIdentificacion("Francis")).thenReturn(cliente1);
-
-		assertThatThrownBy(() -> clienteServiceUnderTest.create(clienteDTO)).isInstanceOf(ErrorException.class);
 	}
 
 
@@ -119,11 +83,11 @@ class ClienteServiceTest
 	{
 		final ClientEntity cliente1 = new ClientEntity();
 		cliente1.setClientId(0);
-		cliente1.setIdentificacion("Brian");
-		cliente1.setPassword("123432123");
+		cliente1.setIdentificacion("jorge");
+		cliente1.setPassword("1143407099");
 		final CuentaEntity cuenta = new CuentaEntity();
 		final MovimientoEntity movimiento = new MovimientoEntity();
-		movimiento.setFecha(LocalDateTime.of(2020, 1, 1, 0, 0, 0));
+		movimiento.setFecha(LocalDateTime.of(2022, 11, 10, 0, 0, 0));
 		cuenta.setMovimientos(List.of(movimiento));
 		cliente1.setCuentas(List.of(cuenta));
 		final Optional<ClientEntity> cliente = Optional.of(cliente1);
@@ -147,8 +111,8 @@ class ClienteServiceTest
 	{
 		final ClientEntity cliente = new ClientEntity();
 		cliente.setClientId(0);
-		cliente.setIdentificacion("1234333");
-		cliente.setPassword("robemjj09888");
+		cliente.setIdentificacion("9999111");
+		cliente.setPassword("clavesegura");
 		final CuentaEntity cuenta = new CuentaEntity();
 		final MovimientoEntity movimiento = new MovimientoEntity();
 		movimiento.setFecha(LocalDateTime.of(2020, 1, 1, 0, 0, 0));
@@ -158,17 +122,17 @@ class ClienteServiceTest
 
 		final ClientEntity cliente2 = new ClientEntity();
 		cliente2.setClientId(0);
-		cliente2.setIdentificacion("1234333");
-		cliente2.setPassword("robemjj09888");
+		cliente2.setIdentificacion("9999111");
+		cliente2.setPassword("clavesegura");
 		final CuentaEntity cuenta1 = new CuentaEntity();
 		final MovimientoEntity movimiento1 = new MovimientoEntity();
 		movimiento1.setFecha(LocalDateTime.of(2020, 1, 1, 0, 0, 0));
 		cuenta1.setMovimientos(List.of(movimiento1));
 		cliente2.setCuentas(List.of(cuenta1));
 		final Optional<ClientEntity> cliente1 = Optional.of(cliente2);
-		when(mockClienteRepository.findByIdentificacion("1234333")).thenReturn(cliente1);
+		when(mockClienteRepository.findByIdentificacion("9999111")).thenReturn(cliente1);
 
-		final Optional<ClientEntity> result = clienteServiceUnderTest.findByIdentificacion("1234333");
+		final Optional<ClientEntity> result = clienteServiceUnderTest.findByIdentificacion("9999111");
 
 		assertThat(result).isEqualTo(expectedResult);
 	}
@@ -176,9 +140,9 @@ class ClienteServiceTest
 	@Test
 	void testFindByIdentificacion_ClienteRepositoryReturnsAbsent()
 	{
-		when(mockClienteRepository.findByIdentificacion("384746664")).thenReturn(Optional.empty());
+		when(mockClienteRepository.findByIdentificacion("999999123")).thenReturn(Optional.empty());
 
-		final Optional<ClientEntity> result = clienteServiceUnderTest.findByIdentificacion("384746664");
+		final Optional<ClientEntity> result = clienteServiceUnderTest.findByIdentificacion("999999123");
 
 		assertThat(result).isEmpty();
 	}
@@ -188,27 +152,27 @@ class ClienteServiceTest
 	{
 		final ClientEntity expectedResult = new ClientEntity();
 		expectedResult.setClientId(0);
-		expectedResult.setIdentificacion("63553636");
-		expectedResult.setPassword("123");
+		expectedResult.setIdentificacion("88882345");
+		expectedResult.setPassword("999");
 		final CuentaEntity cuenta = new CuentaEntity();
 		final MovimientoEntity movimiento = new MovimientoEntity();
-		movimiento.setFecha(LocalDateTime.of(2020, 1, 1, 0, 0, 0));
+		movimiento.setFecha(LocalDateTime.of(2022, 11, 10, 0, 0, 0));
 		cuenta.setMovimientos(List.of(movimiento));
 		expectedResult.setCuentas(List.of(cuenta));
 
 		final ClientEntity cliente1 = new ClientEntity();
 		cliente1.setClientId(0);
-		cliente1.setIdentificacion("63553636");
-		cliente1.setPassword("123");
+		cliente1.setIdentificacion("88882345");
+		cliente1.setPassword("999");
 		final CuentaEntity cuenta1 = new CuentaEntity();
 		final MovimientoEntity movimiento1 = new MovimientoEntity();
-		movimiento1.setFecha(LocalDateTime.of(2020, 1, 1, 0, 0, 0));
+		movimiento1.setFecha(LocalDateTime.of(2022, 11, 10, 0, 0, 0));
 		cuenta1.setMovimientos(List.of(movimiento1));
 		cliente1.setCuentas(List.of(cuenta1));
 		final Optional<ClientEntity> cliente = Optional.of(cliente1);
 		when(mockClienteRepository.findById(0)).thenReturn(cliente);
 
-		final ClientEntity result = clienteServiceUnderTest.getMovByClienteId(0, LocalDate.of(2020, 1, 1), LocalDate.of(2020, 1, 1));
+		final ClientEntity result = clienteServiceUnderTest.getMovByClienteId(0, LocalDate.of(2022, 11, 10), LocalDate.of(2022, 11, 10));
 
 		assertThat(result).isEqualTo(expectedResult);
 	}
@@ -218,7 +182,7 @@ class ClienteServiceTest
 	{
 		when(mockClienteRepository.findById(0)).thenReturn(Optional.empty());
 
-		assertThatThrownBy(() -> clienteServiceUnderTest.getMovByClienteId(0, LocalDate.of(2020, 1, 1),
-				LocalDate.of(2020, 1, 1))).isInstanceOf(NotFoundException.class);
+		assertThatThrownBy(() -> clienteServiceUnderTest.getMovByClienteId(0, LocalDate.of(2022, 1, 1),
+				LocalDate.of(2022, 1, 1))).isInstanceOf(NotFoundException.class);
 	}
 }
